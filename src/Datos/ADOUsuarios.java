@@ -86,13 +86,15 @@ public class ADOUsuarios {
     private String Apellidos;
     private String TipoUsuario;
     private String Contrasena;
+    private String usuario;
     
     //CONSTRUCTOR para definir a los usuarios
-    public ADOUsuarios(String nombre, String apellidos, String tipoUsuario,String contrasena){
+    public ADOUsuarios(String nombre, String apellidos, String tipoUsuario,String contrasena, String usuario){
         this.Nombre = nombre;
         this.Apellidos = apellidos;
         this.TipoUsuario = tipoUsuario;
         this.Contrasena = contrasena;
+        this.usuario= usuario;
     }
     
     

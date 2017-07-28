@@ -5,10 +5,13 @@
  */
 package Vista;
 import LogicaNegocio.Validacion;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author My Little Kid
@@ -49,36 +52,27 @@ public class Inicio extends javax.swing.JFrame implements Runnable {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        cbUsuario = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jpfContrasena = new javax.swing.JPasswordField();
         jbtnIngresar = new javax.swing.JButton();
         time = new javax.swing.JLabel();
         jHora = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        txtusuario = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ADMINISTRADOR");
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("BIENVENIDO");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 210, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuario:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 60, -1));
-
-        cbUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "VENDEDOR" }));
-        getContentPane().add(cbUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 109, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Contraseña:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 159, -1, -1));
-        getContentPane().add(jpfContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 159, 110, -1));
 
         jbtnIngresar.setText("INGRESAR");
         jbtnIngresar.addActionListener(new java.awt.event.ActionListener() {
@@ -86,19 +80,66 @@ public class Inicio extends javax.swing.JFrame implements Runnable {
                 jbtnIngresarActionPerformed(evt);
             }
         });
-        getContentPane().add(jbtnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
 
         time.setForeground(new java.awt.Color(255, 255, 255));
         time.setText("Fecha");
-        getContentPane().add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
         jHora.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jHora.setForeground(new java.awt.Color(255, 255, 255));
         jHora.setText("Hora");
-        getContentPane().add(jHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\My  Little Kid\\Pictures\\Paisajes\\lone_tree_on_a_hill-wallpaper-800x480.jpg")); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 310));
+        txtusuario.setToolTipText("INRGESE USUARIO");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jpfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(31, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(time)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jHora)
+                        .addGap(42, 42, 42))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(jbtnIngresar)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time)
+                    .addComponent(jHora))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jpfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jbtnIngresar)
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,19 +155,29 @@ public class Inicio extends javax.swing.JFrame implements Runnable {
         
         Validacion validar = new Validacion();
         
-        String Usuario = (String)cbUsuario.getSelectedItem();   //(String) estamos casteando los datos a String
+        String Usuario = (String)txtusuario.getText();   //(String) estamos casteando los datos a String
         String Contrasena = jpfContrasena.getText();
-        String user = validar.ValidarUsuario(Usuario, Contrasena);
-        if(user.equals("ADMINISTRADOR")){
+        String user = null;
+        try {
+            user = validar.ValidarUsuario(Usuario, Contrasena);
+        } catch (SQLException ex) {
+            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(user.equals(Usuario=="Administrador")){
+            JOptionPane.showMessageDialog(null,"Bienvenido Administrador");
             Principal menuP = new Principal();
             menuP.setVisible(true);
         }
-        if(user.equals("VENDEDOR")){
+        if(user.equals("TipoUsuario")){
+            JOptionPane.showMessageDialog(null,"Bienvenido Vendedor");
             PuntoVenta ventas = new PuntoVenta();
             ventas.setVisible(true);
         }
         if(user.equals("Nada")){
-            JOptionPane.showInputDialog("El Usuario NO existe");
+            JOptionPane.showMessageDialog(null,"El Usuario NO existe o no inserto ningun dato");
+            
         }
     }//GEN-LAST:event_jbtnIngresarActionPerformed
 
@@ -168,15 +219,14 @@ public class Inicio extends javax.swing.JFrame implements Runnable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> cbUsuario;
     private javax.swing.JLabel jHora;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JButton jbtnIngresar;
     private javax.swing.JPasswordField jpfContrasena;
     private javax.swing.JLabel time;
+    private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 
     @Override

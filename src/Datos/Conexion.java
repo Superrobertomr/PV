@@ -45,13 +45,17 @@ public class Conexion {
     private String usuario;
     private String contrasena;
     Connection con = null;
-    String URL = "jdbc:mysql://localhost:3306/PV2017-2";  //3306 El Intranet del Workbench
+    //String URL = "jdbc:mysql://localhost:3306/pv1","root","";  //3306 El Intranet del Workbench
     
     //conexion a base de datos DIRECTA
-    public Conexion(String usuario, String Contrasena) throws SQLException{
-        this.usuario = usuario;
+    public Conexion(String Usuario, String Contrasena) throws SQLException, ClassNotFoundException{
+        this.usuario = Usuario;
         this.contrasena = Contrasena;
-        con = DriverManager.getConnection(URL, this.usuario, this.contrasena);
+        try{
+           Class.forName("com.mysql.jdbc.Driver");
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pv1","root","");
+        }catch(ClassNotFoundException | SQLException e){
+        
+        }
+        }
     }
-    
-}

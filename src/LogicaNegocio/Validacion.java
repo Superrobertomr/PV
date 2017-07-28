@@ -5,6 +5,7 @@
  */
 package LogicaNegocio;
 import Datos.ValidarUsuario;
+import java.sql.SQLException;
 
 /**
  *
@@ -16,10 +17,10 @@ public class Validacion {
         
     }
     
-    public String ValidarUsuario(String Usuario, String Contrasena){
+    public String ValidarUsuario(String Usuario, String Contrasena) throws SQLException, ClassNotFoundException{
         
         ValidarUsuario validar = new ValidarUsuario();
-        String user="";
+        String user="TipoUsuario";
         int Bandera = validar.VerificarUsuario(Usuario, Contrasena);
         if (Bandera == 1){
             user = Usuario;

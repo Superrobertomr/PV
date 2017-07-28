@@ -17,14 +17,14 @@ public class ValidarUsuario {
         
     }
     
-    public int VerificarUsuario(String Usuario, String Contrasena) throws SQLException{
+    public int VerificarUsuario(String Usuario, String Contrasena) throws SQLException, ClassNotFoundException{
        Conexion conector = new Conexion("root","");
-       String query = "Select *From Usuarios where TipoUsuario = "+Usuario +" and Contrasena="+Contrasena;
+       String query = "Select TipoUsuario From usuarios where Usuario = "+Usuario +" and Contrasena="+Contrasena;
        
        
-        /*int Bandera;
+        int Bandera;
         Bandera = 1;
-        return Bandera;*/
+        return Bandera;
         
     }
     
