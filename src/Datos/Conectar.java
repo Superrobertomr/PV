@@ -6,6 +6,7 @@
 package Datos;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 
 /**
  *
@@ -13,10 +14,17 @@ import java.sql.Connection;
  */
 public class Conectar {
     Connection conectar=null;
-    Public Connection conexion(){
-    
+    public Connection conexion(){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            conectar=DriverManager.getConnection("jdbc:mysql://localhost:3306/pv1","root","");
+        }catch(Exception e){
+            System.out.print(e.getMessage());
+        
+        }
+    return conectar;
     }
     
     }
     
-}
+

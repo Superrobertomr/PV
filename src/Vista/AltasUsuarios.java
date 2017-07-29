@@ -5,7 +5,7 @@
  */
 package Vista;
 
-import Datos.Conexion;
+import Datos.Conectar;
 import java.sql.Connection;
 
 /**
@@ -13,8 +13,9 @@ import java.sql.Connection;
  * @author Solideath
  */
 public class AltasUsuarios extends javax.swing.JInternalFrame {
-    Conexion cc = new Conexion();
-    Connection cn = cc.Conexion();
+    Conectar cc = new Conectar();
+    Connection cn = cc.conexion();
+    
 
     /**
      * Creates new form AltasUsuarios
@@ -166,7 +167,7 @@ public class AltasUsuarios extends javax.swing.JInternalFrame {
 
     private void btnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarActionPerformed
         // TODO add your handling code here:
-        PreparedStatement pst = cc.pre
+        PreparedStatement pst = cn.prepareStatement("insert into usuarios(Nombres,Apellidos,Usuario,TipoUsuario,Contrasena) values()")
     }//GEN-LAST:event_btnregistrarActionPerformed
 
 
