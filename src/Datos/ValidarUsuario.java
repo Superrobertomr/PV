@@ -26,6 +26,5 @@ public class ValidarUsuario {
         Bandera = 1;
         return Bandera;
         
-    }
-    
+    }    
 }

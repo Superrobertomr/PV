@@ -15,6 +15,10 @@ import java.sql.Statement;   //Traduce un String a un codigo SQL para las BUSQUE
  */
 public class Conexion {
 
+    public Conexion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * @return the usuario
      */
@@ -57,5 +61,7 @@ public class Conexion {
         }catch(ClassNotFoundException | SQLException e){
         
         }
+        return con;
         }
-    }
+    
+        }

@@ -159,23 +159,24 @@ public class Inicio extends javax.swing.JFrame implements Runnable {
         String Contrasena = jpfContrasena.getText();
         String user = null;
         try {
+            
             user = validar.ValidarUsuario(Usuario, Contrasena);
         } catch (SQLException ex) {
             Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if(user.equals(Usuario=="Administrador")){
+        if(user.equals(Usuario)){
             JOptionPane.showMessageDialog(null,"Bienvenido Administrador");
             Principal menuP = new Principal();
             menuP.setVisible(true);
         }
-        if(user.equals("TipoUsuario")){
+        if(user.equals(Usuario)){
             JOptionPane.showMessageDialog(null,"Bienvenido Vendedor");
             PuntoVenta ventas = new PuntoVenta();
             ventas.setVisible(true);
         }
-        if(user.equals("Nada")){
+        if(user.equals(" ")){
             JOptionPane.showMessageDialog(null,"El Usuario NO existe o no inserto ningun dato");
             
         }
