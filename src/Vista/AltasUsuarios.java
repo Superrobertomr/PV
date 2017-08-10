@@ -5,17 +5,29 @@
  */
 package Vista;
 
+<<<<<<< HEAD
 import LogicaNegocio.CrudUsuarios;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+=======
+import Datos.Conectar;
+import java.sql.Connection;
+>>>>>>> a1ea0474a969cde6665374c343e25984ac0c68af
 
 /**
  *
  * @author My Little Kid
  */
 public class AltasUsuarios extends javax.swing.JInternalFrame {
+<<<<<<< HEAD
 CrudUsuarios usuario = new CrudUsuarios();
+=======
+    Conectar cc = new Conectar();
+    Connection cn = cc.conexion();
+    
+
+>>>>>>> a1ea0474a969cde6665374c343e25984ac0c68af
     /**
      * Creates new form AltasUsuarios2
      */
@@ -164,6 +176,7 @@ CrudUsuarios usuario = new CrudUsuarios();
 
     private void btnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         int renglon = 0;
         String nombre = txtnombres.getText();
         String apellidos = txtapellidos.getText();
@@ -174,6 +187,9 @@ CrudUsuarios usuario = new CrudUsuarios();
             JOptionPane.showMessageDialog(rootPane, "Registro Exitoso!");
         }
         MostrarTablaUsuarios();  //Actualiza la tabla despues de agregar un usuario nuevo
+=======
+        PreparedStatement pst = cn.prepareStatement("insert into usuarios(Nombres,Apellidos,Usuario,TipoUsuario,Contrasena) values()")
+>>>>>>> a1ea0474a969cde6665374c343e25984ac0c68af
     }//GEN-LAST:event_btnregistrarActionPerformed
 
 

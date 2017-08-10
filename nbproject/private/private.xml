@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/My%20%20Little%20Kid/Documents/GitHub/PV/src/Datos/ADOUsuarios.java</file>
             <file>file:/C:/Users/My%20%20Little%20Kid/Documents/GitHub/PV/src/Vista/AltaProductos.java</file>
             <file>file:/C:/Users/My%20%20Little%20Kid/Documents/GitHub/PV/src/Datos/Conexion.java</file>
@@ -10,6 +11,12 @@
             <file>file:/C:/Users/My%20%20Little%20Kid/Documents/GitHub/PV/src/Vista/AltasUsuarios.java</file>
             <file>file:/C:/Users/My%20%20Little%20Kid/Documents/GitHub/PV/src/LogicaNegocio/CrudUsuarios.java</file>
             <file>file:/C:/Users/My%20%20Little%20Kid/Documents/GitHub/PV/src/Vista/Principal.java</file>
+=======
+            <file>file:/C:/Users/Solideath/Documents/GitHub/PV/src/Vista/Principal.java</file>
+            <file>file:/C:/Users/Solideath/Documents/GitHub/PV/src/Datos/Conexion.java</file>
+            <file>file:/C:/Users/Solideath/Documents/GitHub/PV/src/Vista/AltasUsuarios.java</file>
+            <file>file:/C:/Users/Solideath/Documents/GitHub/PV/src/Datos/Conectar.java</file>
+>>>>>>> a1ea0474a969cde6665374c343e25984ac0c68af
         </group>
     </open-files>
 </project-private>
