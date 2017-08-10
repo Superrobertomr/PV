@@ -5,6 +5,11 @@
  */
 package Datos;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 /**
  *
  * @author My Little Kid
@@ -81,6 +86,11 @@ public class ADOUsuarios {
         this.Contrasena = Contrasena;
     }
     //Atributos de un USUARIO
+    Conexion conector = new Conexion();
+    private Statement stm = null;
+    private ResultSet rs = null;
+    private Connection reg = null;
+    
     private int idUsuario;
     private String Nombre;
     private String Apellidos;
@@ -97,5 +107,39 @@ public class ADOUsuarios {
         this.usuario= usuario;
     }
     
+    public ADOUsuarios(){
+        
+    }
+    
+    public int AgregarUsuario(ADOUsuarios users){
+        int renglon = 0;
+        String sql = "Insert into usuarios (Nombres, Apellidos, TipoUsuario, Contrasena) values('"+users.getNombre()+"', '"+users.getApellidos()+"', '"+users.getTipoUsuario()+"', '"+users.getContrasena()+"')";
+        
+        try {
+            reg = conector.getConexion();
+            if(reg!= null){
+                stm = reg.createStatement();
+                stm.executeUpdate(sql);
+                renglon = 1;
+            }
+        } catch (SQLException ex) {
+        }
+        conector.Desconectar();
+        return renglon;
+    }
+    
+    public ResultSet TablaUsuarios(){
+        ResultSet datos = null;
+        String sql = "Select *from usuarios";
+        try {
+            reg = conector.getConexion();
+            stm = reg.createStatement();
+            datos = stm.executeQuery(sql);
+        } catch (SQLException e) {
+        }
+        
+        conector.Desconectar();
+        return datos;
+    }
     
 }

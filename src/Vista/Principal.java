@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.YES_NO_OPTION;
 import javax.swing.JOptionPane;
@@ -32,6 +33,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem6 = new javax.swing.JMenuItem();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -59,7 +61,19 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem6.setText("jMenuItem6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Administrador");
         setUndecorated(true);
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
 
         jMenu1.setText("Sistema");
 
@@ -79,15 +93,20 @@ public class Principal extends javax.swing.JFrame {
         jMenu2.setText("Usuarios");
 
         jMenuItem3.setText("Altas");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem3);
 
         jMenuItem4.setText("Bajas");
         jMenu2.add(jMenuItem4);
 
-        jMenuItem5.setText("Cambios");
+        jMenuItem5.setText("Modificaciones");
         jMenu2.add(jMenuItem5);
 
-        jMenuItem7.setText("ABC Usuarios");
+        jMenuItem7.setText("ABM Usuarios");
         jMenu2.add(jMenuItem7);
 
         jMenuBar1.add(jMenu2);
@@ -100,7 +119,7 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem9.setText("Bajas");
         jMenu3.add(jMenuItem9);
 
-        jMenuItem10.setText("Cambios");
+        jMenuItem10.setText("Modificacion");
         jMenu3.add(jMenuItem10);
 
         jMenuBar1.add(jMenu3);
@@ -113,7 +132,12 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem12.setText("Bajas");
         jMenu4.add(jMenuItem12);
 
-        jMenuItem13.setText("Cambios");
+        jMenuItem13.setText("Modificacion");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem13);
 
         jMenuBar1.add(jMenu4);
@@ -144,11 +168,11 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addComponent(jDesktopPane1)
         );
 
         pack();
@@ -157,6 +181,18 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        
+        AltasUsuarios ventanaUsuario = new AltasUsuarios();
+        jDesktopPane1.add(ventanaUsuario);
+        
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,6 +230,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
