@@ -191,6 +191,7 @@ public class Principal extends javax.swing.JFrame {
         
         AltasUsuarios ventanaUsuario = new AltasUsuarios();
         jDesktopPane1.add(ventanaUsuario);
+        ventanaUsuario.setVisible(true);
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
