@@ -62,7 +62,7 @@ public class Conexion {
         
         }
         
-        }
+    }
     public Connection getConexion(){
         return con;
     }
@@ -73,4 +73,4 @@ public class Conexion {
             System.out.println("Conexion Exitosa!");
         }
     }
-        }
+}

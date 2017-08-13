@@ -142,4 +142,20 @@ public class ADOUsuarios {
         return datos;
     }
     
+    public int BajaUsuarios(int idUsuarios){
+        int renglon = 0;
+        String sql = "Delet from usuarios where idUsuario = '"+idUsuarios+"'Order by idUsuario Limit 1 ";
+        try {
+            reg = conector.getConexion();
+            if(reg!= null){
+                stm = reg.createStatement();
+                stm.executeUpdate(sql);
+                renglon = 1;
+            }
+        } catch (SQLException ex) {
+        }
+        conector.Desconectar();
+        return renglon;
+    }
+    
 }

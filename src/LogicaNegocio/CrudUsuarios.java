@@ -32,4 +32,10 @@ public class CrudUsuarios {
         return tabla;
     }
     
+    public int BajaUsuarios(int idUsuarios){
+        int bandera = 0;
+        bandera = Usuario.BajaUsuarios(idUsuarios);
+        return bandera;
+    }
+    
 }
