@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/My%20%20Little%20Kid/Documents/GitHub/PV/src/Datos/ADOUsuarios.java</file>
             <file>file:/C:/Users/My%20%20Little%20Kid/Documents/GitHub/PV/src/Vista/Inicio.java</file>
             <file>file:/C:/Users/My%20%20Little%20Kid/Documents/GitHub/PV/src/LogicaNegocio/CrudUsuarios.java</file>
             <file>file:/C:/Users/My%20%20Little%20Kid/Documents/GitHub/PV/src/Vista/Principal.java</file>
             <file>file:/C:/Users/My%20%20Little%20Kid/Documents/GitHub/PV/src/Vista/BajasUsuarios.java</file>
+=======
+            <file>file:/C:/Users/Solideath/Documents/GitHub/PV/src/Vista/Principal.java</file>
+            <file>file:/C:/Users/Solideath/Documents/GitHub/PV/src/Vista/AltasUsuarios.java</file>
+>>>>>>> 726362f344b42b6a10cb3ea08893501827537c26
         </group>
     </open-files>
 </project-private>
